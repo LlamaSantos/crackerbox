@@ -1,0 +1,27 @@
+{
+  "name": "crackerbox",
+  "version": "1.0.0",
+  "description": "Open the box and get the prize",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --harmony .",
+    "test": "mocha -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LlamaSantos/crackerbox.git"
+  },
+  "keywords": [
+    "Chat"
+  ],
+  "author": "James R. White",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LlamaSantos/crackerbox/issues"
+  },
+  "homepage": "https://github.com/LlamaSantos/crackerbox",
+  "dependencies": {
+    "co": "^4.4.0",
+    "koa": "^0.18.0"
+  }
+}
