@@ -21,7 +21,28 @@
   },
   "homepage": "https://github.com/LlamaSantos/crackerbox",
   "dependencies": {
+    "babel": "^4.6.5",
     "co": "^4.4.0",
-    "koa": "^0.18.0"
+    "ignore-css": "^1.0.0",
+    "jquery": "^2.1.3",
+    "jsx-loader": "^0.12.2",
+    "koa": "^0.18.0",
+    "koa-router": "^4.2.0",
+    "node-jsx": "^0.12.4",
+    "react": "^0.13.0-rc1",
+    "style-loader": "^0.8.3"
+  },
+  "devDependencies": {
+    "browserify": "^9.0.3",
+    "css-loader": "^0.9.1",
+    "gulp": "^3.8.11",
+    "gulp-karma": "0.0.4",
+    "gulp-react": "^2.0.0",
+    "gulp-util": "^3.0.4",
+    "karma": "^0.12.31",
+    "karma-mocha": "^0.1.10",
+    "mocha": "^2.1.0",
+    "webpack": "^1.6.0",
+    "webpack-dev-server": "^1.7.0"
   }
 }
