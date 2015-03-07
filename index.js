@@ -1,26 +1,23 @@
 'use strict';
 
 // -- Automatically transpile jsx files
-//require('node-jsx').install({harmony: true});
 require("babel/register");
 require('ignore-css').install();
 
 var React = require('react');
 var koa = require('koa');
-var router = require('koa-router')();
-
+var send = require('koa-send');
 var app = koa();
+var router = require('./routes');
 
 app.use(require('./middleware/report'));
 app.use(require('./middleware/timer'));
+app.use(router.routes());
 
-router.get('/', function *(next){
-  console.info(this.render);
-  var Idx = React.createFactory(require('./pages/index'));
-  this.body = React.renderToString(Idx());
+app.use(function *(next){
+  yield send(this, this.path, { root: __dirname + '/dist' });
 });
 
-app.use(router.routes());
 app.use(router.allowedMethods());
 
 app.listen(process.env.PORT);

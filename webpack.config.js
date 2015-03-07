@@ -24,8 +24,7 @@ module.exports = {
 			{ test: /\.svg$/,    loader: "file-loader?prefix=font/" },
 
 			// required for react jsx
-			{ test: /\.js$/,    loader: "jsx-loader" },
-			{ test: /\.jsx$/,   loader: "jsx-loader?insertPragma=React.DOM" },
+      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"}
 		]
 	},
   resolve: {

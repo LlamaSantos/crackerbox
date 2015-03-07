@@ -7,11 +7,20 @@ var webpackConfig = require('./webpack.config');
 
 gulp.task('default', ['webpack-dev-server']);
 
-gulp.task("build-dev", ["webpack:build-dev"], function() {
+gulp.task("build-dev", ["webpack:build-dev", "vendor"], function() {
 	gulp.watch(["app/**/*"], ["webpack:build-dev"]);
 });
 
-gulp.task("build", ["webpack:build"]);
+gulp.task("build", ["webpack:build", "vendor"]);
+
+gulp.task("vendor", function (callback){
+	gulp.src('./vendor/semantic/dist/**/*.*')
+		  .pipe(gulp.dest('dist/semantic'));
+});
+
+gulp.task("watch", function (callback){
+	gulp.watch(["pages/**/*"], ["build"]);
+});
 
 gulp.task("webpack:build", function(callback) {
 	// modify some webpack config options

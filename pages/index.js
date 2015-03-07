@@ -1,9 +1,10 @@
 'use strict';
 
-var React = require('react');
-var Page = require('./_page');
+import React from 'react';
+import Page from './_page';
+import Personas from './components/personas';
 
-module.exports = React.createClass({
+export default React.createClass({
   getPageResources() {
     return {
       metas : {
@@ -18,12 +19,13 @@ module.exports = React.createClass({
   render() {
     var resources = this.getPageResources();
     return (
-      <Page metas={resources.metas} scripts={resources.scripts}>
-        <div>
-          My content here!
+      <Page>
+        <div className='ui three column grid'>
+          <div className='three wide column panel'>
+            <Personas />
+          </div>
         </div>
       </Page>
     );
   }
-
 });
