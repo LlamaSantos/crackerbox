@@ -14,7 +14,7 @@ gulp.task("build-dev", ["webpack:build-dev", "vendor"], function() {
 gulp.task("build", ["webpack:build", "vendor"]);
 
 gulp.task("vendor", function (callback){
-	gulp.src('./vendor/semantic/dist/**/*.*')
+	gulp.src('./semantic/dist/**/*.*')
 		  .pipe(gulp.dest('dist/semantic'));
 });
 
